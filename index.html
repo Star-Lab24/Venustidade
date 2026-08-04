@@ -6,17 +6,45 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Para Yasmin 💜 | Venustidade</title>
+<title>Venustidade 💜</title>
 
 <link rel="stylesheet" href="style.css">
+
+
+<!-- Prévia quando enviar o link -->
+
+<meta property="og:title" content="Venustidade 💜">
+
+<meta property="og:description" content="Uma carta escrita para Yasmin. Algumas pessoas não têm apenas uma cor... elas carregam todas elas.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image" content="SEU-LINK-DA-IMAGEM.png">
+
+<meta property="og:url" content="SEU-LINK-DO-SITE">
+
+
+<!-- Twitter / Discord -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="Venustidade 💜">
+
+<meta name="twitter:description" content="Uma beleza rara, delicada e intensa.">
+
+<meta name="twitter:image" content="SEU-LINK-DA-IMAGEM.png">
+
 
 </head>
 
 
+
 <body>
 
+
 <div class="stars"></div>
-<div class="estrela-cadente"></div>
+
+<div id="particles"></div>
 
 
 <main class="container">
@@ -25,26 +53,26 @@
 <div class="card">
 
 
-<header>
-
 <h1>Venustidade</h1>
 
-<div class="linha"></div>
 
-</header>
+<div class="linha"></div>
 
 
 
 <section class="dedicatoria">
 
+
 <p>
-Para você, Yasmin Maria da Silva Oliveira. 💜
+Para Yasmin Maria da Silva Oliveira. 💜
 </p>
+
 
 <p>
 Eu poderia tentar escolher uma única palavra para descrever você,
 mas algumas pessoas são grandes demais para caber em apenas uma definição.
 </p>
+
 
 <p>
 Então encontrei uma palavra rara, quase esquecida pelo tempo,
@@ -52,7 +80,9 @@ mas que parece ter esperado exatamente pelo momento em que eu conheceria você:
 <strong>venustidade.</strong>
 </p>
 
+
 </section>
+
 
 
 
@@ -206,47 +236,42 @@ a sorte de conhecer.
 </p>
 
 
-<p>
-Então, no dia em que o mundo ganhou você,
-eu só consigo agradecer.
-</p>
-
-
-<p>
-Porque algumas pessoas são bonitas.
-</p>
-
-
-<p>
-Algumas são especiais.
-</p>
-
-
-<p>
-Algumas são inesquecíveis.
-</p>
-
-
-
 </section>
 
 
 
-<section class="frase-final">
+
+<section class="final">
 
 
 <p>
+
+Porque algumas pessoas são bonitas.
+
+<br><br>
+
+Algumas são especiais.
+
+<br><br>
+
+Algumas são inesquecíveis.
+
+<br><br>
+
 
 Mas poucas carregam aquilo que não se explica,
 aquilo que se sente antes mesmo de entender.
 
 <br><br>
 
+
 E você...
 
 <br><br>
 
+
 Você é a minha definição de
+
 <strong>venustidade.</strong>
 
 </p>
@@ -256,46 +281,27 @@ Você é a minha definição de
 
 
 
-<section class="mensagem-final">
+<section class="assinatura">
 
 
 <p>
-Yasmin,
-</p>
-
-
-<p>
-Mesmo que a vida siga caminhos diferentes,
-algumas pessoas continuam carregando um lugar especial dentro da nossa memória.
-</p>
-
-
-<p>
-Você é uma dessas pessoas que deixam cor nos dias,
-que tornam momentos simples mais bonitos
-e que fazem uma palavra como "venustidade"
-finalmente ter um significado.
-</p>
-
-
-<p>
-Obrigado por ser exatamente quem você é.
-Nunca deixe que o mundo faça você esquecer
-o quanto você é rara.
-</p>
-
-
-<div class="assinatura">
-
 Com carinho,
-<br>
+</p>
 
-<strong>Alguém que sempre enxergará sua beleza.</strong>
 
-</div>
+<h2>
+💜 Para Yasmin 💜
+</h2>
+
+
+<p>
+"Algumas pessoas não têm apenas uma cor...
+elas carregam todas elas."
+</p>
 
 
 </section>
+
 
 
 </div>
@@ -304,6 +310,84 @@ Com carinho,
 </main>
 
 
+
+
+
+<script>
+
+
+const container =
+document.getElementById("particles");
+
+
+const cores = [
+
+"#ff8bd8",
+"#ffd166",
+"#7dd3fc",
+"#c084fc",
+"#86efac",
+"#fb7185"
+
+];
+
+
+
+for(let i = 0; i < 80; i++){
+
+
+const particula =
+document.createElement("span");
+
+
+particula.className =
+"particula";
+
+
+
+particula.style.left =
+Math.random()*100 + "%";
+
+
+
+particula.style.animationDelay =
+Math.random()*10 + "s";
+
+
+
+particula.style.animationDuration =
+(5 + Math.random()*10) + "s";
+
+
+
+particula.style.background =
+cores[Math.floor(Math.random()*cores.length)];
+
+
+
+let tamanho =
+Math.random()*8+3;
+
+
+particula.style.width =
+tamanho+"px";
+
+
+particula.style.height =
+tamanho+"px";
+
+
+
+container.appendChild(particula);
+
+
+}
+
+
+</script>
+
+
+
 </body>
 
-</html>
+  </html>
