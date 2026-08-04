@@ -453,3 +453,216 @@ em {
     }
 
 }
+/* =====================================
+   CÉU ESTRELADO PREMIUM
+===================================== */
+
+
+.stars {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* Camadas de estrelas */
+
+.stars::before,
+.stars::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    box-shadow:
+
+    5vw 10vh #fff,
+    12vw 25vh #ffe6f7,
+    18vw 80vh #fff,
+    25vw 45vh #ffd6ed,
+    35vw 15vh #fff,
+    42vw 70vh #ffe1f2,
+    50vw 30vh #fff,
+    58vw 85vh #ffd0e8,
+    65vw 20vh #fff,
+    72vw 60vh #ffe5f4,
+    80vw 35vh #fff,
+    88vw 75vh #ffd2e9,
+    95vw 15vh #fff,
+
+    10vw 55vh #fff,
+    30vw 90vh #ffe8f6,
+    55vw 50vh #fff,
+    75vw 10vh #ffd8ee,
+    90vw 45vh #fff;
+
+
+    animation:
+    brilhoEstrela 4s infinite alternate;
+
+}
+
+
+
+.stars::after {
+
+    width: 5px;
+    height: 5px;
+
+    opacity: .6;
+
+    box-shadow:
+
+    8vw 18vh #fff,
+    20vw 65vh #ffd9ef,
+    40vw 40vh #fff,
+    60vw 12vh #ffe4f5,
+    78vw 80vh #fff,
+    92vw 55vh #ffd4ec;
+
+    animation-delay:2s;
+
+}
+
+
+
+
+@keyframes brilhoEstrela {
+
+    0% {
+
+        opacity:.3;
+
+        transform:
+        scale(1);
+
+    }
+
+
+    50% {
+
+        opacity:1;
+
+        transform:
+        scale(1.8);
+
+    }
+
+
+    100% {
+
+        opacity:.4;
+
+        transform:
+        scale(1);
+
+    }
+
+}
+
+
+
+/* Pequenas estrelas cadentes */
+
+.estrela-cadente {
+
+    position:fixed;
+
+    width:120px;
+
+    height:2px;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        white
+    );
+
+    transform:rotate(-35deg);
+
+    animation:
+    cair 8s infinite;
+
+    opacity:.7;
+
+}
+
+
+
+@keyframes cair {
+
+    0% {
+
+        top:-10%;
+        left:80%;
+
+        opacity:0;
+
+    }
+
+
+    10% {
+
+        opacity:1;
+
+    }
+
+
+    30% {
+
+        top:40%;
+        left:50%;
+
+        opacity:0;
+
+    }
+
+
+    100% {
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* Brilho ao redor da carta */
+
+.card {
+
+    box-shadow:
+
+    0 0 20px rgba(255,150,220,.25),
+    0 0 80px rgba(180,80,255,.18),
+    inset 0 0 30px rgba(255,255,255,.05);
+
+}
+
+
+
+/* Efeito de universo na página */
+
+body {
+
+    background:
+
+    radial-gradient(
+        circle at 50% 0%,
+        #572070 0%,
+        #16051f 45%,
+        #050208 100%
+    );
+
+}
