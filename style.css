@@ -9,119 +9,291 @@
 
 
 body {
+
     min-height: 100vh;
+
     background:
-        radial-gradient(circle at top, #4b1f5f, transparent 35%),
-        radial-gradient(circle at bottom, #25103d, transparent 40%),
-        linear-gradient(135deg, #090312, #17051f);
+    radial-gradient(circle at top, #642080, transparent 35%),
+    radial-gradient(circle at bottom, #30104a, transparent 45%),
+    linear-gradient(135deg, #05010a, #16051f);
 
-    color: #fff;
-    font-family: "Poppins", sans-serif;
 
-    overflow-x: hidden;
+    color:white;
+
+    font-family:"Poppins", sans-serif;
+
+    overflow-x:hidden;
+
 }
 
 
-/* Fundo com estrelas */
 
-body::before,
-body::after {
+/* ==========================
+   ESTRELAS
+========================== */
 
-    content: "";
 
-    position: fixed;
+.stars {
 
-    width: 3px;
-    height: 3px;
+    position:fixed;
 
-    background: white;
+    inset:0;
 
-    border-radius: 50%;
+    z-index:-3;
+
+}
+
+
+
+.stars::before,
+.stars::after {
+
+
+    content:"";
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+
+    background:white;
+
+    border-radius:50%;
+
 
     box-shadow:
-    30vw 10vh white,
-    70vw 20vh white,
-    15vw 60vh white,
-    85vw 70vh white,
-    50vw 90vh white,
-    90vw 40vh white,
-    20vw 30vh white,
-    60vw 50vh white;
 
-    animation: estrelas 8s infinite alternate;
-
-    opacity: .5;
-
-}
+    5vw 10vh #fff,
+    15vw 25vh #ffd6ef,
+    25vw 80vh #fff,
+    35vw 15vh #fff,
+    45vw 60vh #ffd9ee,
+    55vw 30vh #fff,
+    65vw 85vh #fff,
+    75vw 20vh #ffd8ef,
+    85vw 70vh #fff,
+    95vw 40vh #fff,
 
 
-body::after {
-    animation-delay: 4s;
-    transform: scale(1.5);
-}
+    12vw 55vh #fff,
+    32vw 45vh #ffd6eb,
+    52vw 75vh #fff,
+    72vw 50vh #fff,
+    90vw 15vh #ffd8ef;
 
 
-@keyframes estrelas {
 
-    from {
-        transform: translateY(0);
-        opacity: .3;
-    }
+    animation:
 
-    to {
-        transform: translateY(-30px);
-        opacity: .8;
-    }
+    piscar 5s infinite alternate;
 
 }
 
 
 
-/* Container */
+.stars::after {
+
+    width:5px;
+
+    height:5px;
+
+    opacity:.5;
+
+    animation-delay:2s;
+
+}
+
+
+
+@keyframes piscar {
+
+
+from {
+
+opacity:.3;
+
+transform:scale(1);
+
+}
+
+
+to {
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================
+   PARTÍCULAS COLORIDAS
+========================== */
+
+
+#particles {
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+}
+
+
+
+.particula {
+
+    position:absolute;
+
+    bottom:-30px;
+
+    border-radius:50%;
+
+
+    opacity:.8;
+
+    filter:blur(.3px);
+
+
+    box-shadow:
+
+    0 0 15px currentColor;
+
+
+    animation:
+
+    subir linear infinite;
+
+}
+
+
+
+@keyframes subir {
+
+
+0% {
+
+    transform:
+
+    translateY(0)
+    translateX(0)
+    scale(1);
+
+    opacity:0;
+
+}
+
+
+20% {
+
+    opacity:1;
+
+}
+
+
+100% {
+
+
+    transform:
+
+    translateY(-120vh)
+    translateX(60px)
+    scale(.3);
+
+
+    opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* ==========================
+   CARTA
+========================== */
+
 
 .container {
 
-    min-height: 100vh;
+    min-height:100vh;
 
-    display: flex;
+    display:flex;
 
-    justify-content: center;
+    justify-content:center;
 
-    align-items: center;
+    align-items:center;
 
-    padding: 50px 20px;
+    padding:50px 20px;
 
 }
 
 
 
-/* Carta */
-
 .card {
 
-    max-width: 900px;
 
-    padding: 55px;
+    max-width:900px;
 
-    border-radius: 35px;
+
+    padding:55px;
+
+
+    border-radius:35px;
+
 
 
     background:
-    rgba(255,255,255,0.08);
+
+    rgba(255,255,255,.08);
 
 
-    backdrop-filter: blur(18px);
+
+    backdrop-filter:
+
+    blur(20px);
+
 
 
     border:
+
     1px solid rgba(255,255,255,.18);
+
 
 
     box-shadow:
 
-    0 0 60px rgba(255,120,210,.25),
+
+    0 0 40px rgba(255,120,210,.25),
+
+    0 0 100px rgba(170,70,255,.15),
 
     inset 0 0 40px rgba(255,255,255,.05);
+
+
+
+    position:relative;
+
+
+    overflow:hidden;
+
 
 
     animation:
@@ -129,43 +301,53 @@ body::after {
     aparecer 1.8s ease;
 
 
-    position: relative;
-
-    overflow: hidden;
-
 }
 
 
 
-/* brilho passando na carta */
+/* brilho passando */
 
 .card::before {
 
+
     content:"";
+
 
     position:absolute;
 
-    top:-100%;
-
-    left:-100%;
 
     width:200%;
 
     height:200%;
 
+
+    top:-100%;
+
+    left:-100%;
+
+
     background:
+
     linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.15),
-        transparent
+
+    120deg,
+
+    transparent,
+
+    rgba(255,255,255,.15),
+
+    transparent
+
     );
 
 
-    transform: rotate(25deg);
+    transform:rotate(25deg);
+
 
     animation:
+
     brilho 8s infinite;
+
 
 }
 
@@ -173,56 +355,84 @@ body::after {
 
 @keyframes brilho {
 
-    0% {
-        transform: translate(-100%,-100%) rotate(25deg);
-    }
 
-    50% {
-        transform: translate(100%,100%) rotate(25deg);
-    }
+0% {
 
-    100% {
-        transform: translate(100%,100%) rotate(25deg);
-    }
+transform:
+
+translate(-100%,-100%)
+
+rotate(25deg);
+
+}
+
+
+50% {
+
+transform:
+
+translate(100%,100%)
+
+rotate(25deg);
+
+}
+
+
+100% {
+
+transform:
+
+translate(100%,100%)
+
+rotate(25deg);
+
+}
+
 
 }
 
 
 
-/* Título */
+
+/* ==========================
+   TITULO
+========================== */
 
 
 h1 {
 
-    position: relative;
 
     text-align:center;
 
 
     font-family:
+
     "Dancing Script",
     cursive;
 
 
-    font-size: 85px;
+
+    font-size:90px;
 
 
-    color:#ffd9ee;
+
+    color:#ffd8ee;
+
 
 
     text-shadow:
 
-    0 0 15px #ff7bc8,
 
-    0 0 35px #ff4fa8;
+    0 0 15px #ff73c6,
 
+    0 0 40px #ff3fa5;
 
-    margin-bottom:20px;
 
 
     animation:
 
     pulsar 3s infinite;
+
 
 }
 
@@ -230,43 +440,50 @@ h1 {
 
 @keyframes pulsar {
 
-    0%,100% {
 
-        text-shadow:
-        0 0 15px #ff7bc8;
-
-    }
+50% {
 
 
-    50% {
+text-shadow:
 
-        text-shadow:
-        0 0 35px #ff4fa8;
+0 0 35px #ff3fa5;
 
-    }
+
+}
+
 
 }
 
 
 
-/* Linha decorativa */
 
 .linha {
 
-    width:160px;
+
+    width:170px;
+
 
     height:3px;
 
-    margin:0 auto 45px;
+
+    margin:
+
+    20px auto 45px;
+
 
 
     background:
 
     linear-gradient(
-        90deg,
-        transparent,
-        #ff9ddd,
-        transparent
+
+    90deg,
+
+    transparent,
+
+    #ff9ddd,
+
+    transparent
+
     );
 
 
@@ -274,11 +491,13 @@ h1 {
 
 
 
-/* Texto */
+
+/* ==========================
+   TEXTO
+========================== */
+
 
 p {
-
-    position:relative;
 
 
     font-size:18px;
@@ -287,21 +506,14 @@ p {
     line-height:2;
 
 
-    color:#f8edf5;
-
-
-    margin-bottom:28px;
+    color:#faedf7;
 
 
     text-align:justify;
 
 
-    letter-spacing:.2px;
+    margin-bottom:28px;
 
-
-    animation:
-
-    texto 1s ease;
 
 }
 
@@ -309,27 +521,40 @@ p {
 
 strong {
 
-    color:#ffc1e4;
+
+    color:#ffc2e5;
+
 
     text-shadow:
 
-    0 0 10px rgba(255,120,200,.7);
+    0 0 10px #ff73c6;
+
 
 }
 
 
 
-em {
+.dedicatoria {
 
-    color:#ffd2ea;
+
+    text-align:center;
 
 }
 
 
 
-/* Final */
+.dedicatoria p {
+
+
+    text-align:center;
+
+}
+
+
+
 
 .final {
+
 
     margin-top:50px;
 
@@ -337,332 +562,144 @@ em {
     text-align:center;
 
 
-    font-size:23px;
+}
 
 
-    line-height:2;
+
+.final p {
 
 
-    color:#ffe7f5;
+    text-align:center;
+
+
+    font-size:22px;
 
 
 }
 
 
 
-.final strong {
+.assinatura {
 
-    font-size:30px;
+
+    margin-top:60px;
+
+
+    text-align:center;
+
+
+    color:#ffe5f5;
+
 
 }
 
 
 
-/* Entrada */
+.assinatura h2 {
+
+
+    font-family:
+
+    "Dancing Script",
+    cursive;
+
+
+    font-size:45px;
+
+
+    color:#ffc5e5;
+
+
+}
+
+
+
+/* ==========================
+   ANIMAÇÃO
+========================== */
+
 
 @keyframes aparecer {
 
-    from {
 
-        opacity:0;
-
-        transform:
-        translateY(50px)
-        scale(.95);
-
-    }
+from {
 
 
-    to {
+opacity:0;
 
-        opacity:1;
 
-        transform:
-        translateY(0)
-        scale(1);
+transform:
 
-    }
+translateY(50px)
+
+scale(.95);
+
 
 }
 
 
 
-@keyframes texto {
+to {
 
-    from {
 
-        opacity:0;
+opacity:1;
 
-    }
 
-    to {
+transform:
 
-        opacity:1;
+translateY(0)
 
-    }
+scale(1);
+
+
+}
+
 
 }
 
 
 
-/* Responsivo */
+
+
+/* ==========================
+   CELULAR
+========================== */
+
 
 @media(max-width:700px){
 
 
-    .card {
-
-        padding:30px 22px;
-
-        border-radius:25px;
-
-    }
-
-
-
-    h1 {
-
-        font-size:55px;
-
-    }
-
-
-
-    p {
-
-        font-size:16px;
-
-        line-height:1.8;
-
-    }
-
-
-
-    .final {
-
-        font-size:18px;
-
-    }
-
-
-
-    .final strong {
-
-        font-size:24px;
-
-    }
-
-}
-/* =====================================
-   CÉU ESTRELADO PREMIUM
-===================================== */
-
-
-.stars {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -1;
-}
-
-
-/* Camadas de estrelas */
-
-.stars::before,
-.stars::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 3px;
-    height: 3px;
-
-    background: #ffffff;
-
-    border-radius: 50%;
-
-    box-shadow:
-
-    5vw 10vh #fff,
-    12vw 25vh #ffe6f7,
-    18vw 80vh #fff,
-    25vw 45vh #ffd6ed,
-    35vw 15vh #fff,
-    42vw 70vh #ffe1f2,
-    50vw 30vh #fff,
-    58vw 85vh #ffd0e8,
-    65vw 20vh #fff,
-    72vw 60vh #ffe5f4,
-    80vw 35vh #fff,
-    88vw 75vh #ffd2e9,
-    95vw 15vh #fff,
-
-    10vw 55vh #fff,
-    30vw 90vh #ffe8f6,
-    55vw 50vh #fff,
-    75vw 10vh #ffd8ee,
-    90vw 45vh #fff;
-
-
-    animation:
-    brilhoEstrela 4s infinite alternate;
-
-}
-
-
-
-.stars::after {
-
-    width: 5px;
-    height: 5px;
-
-    opacity: .6;
-
-    box-shadow:
-
-    8vw 18vh #fff,
-    20vw 65vh #ffd9ef,
-    40vw 40vh #fff,
-    60vw 12vh #ffe4f5,
-    78vw 80vh #fff,
-    92vw 55vh #ffd4ec;
-
-    animation-delay:2s;
-
-}
-
-
-
-
-@keyframes brilhoEstrela {
-
-    0% {
-
-        opacity:.3;
-
-        transform:
-        scale(1);
-
-    }
-
-
-    50% {
-
-        opacity:1;
-
-        transform:
-        scale(1.8);
-
-    }
-
-
-    100% {
-
-        opacity:.4;
-
-        transform:
-        scale(1);
-
-    }
-
-}
-
-
-
-/* Pequenas estrelas cadentes */
-
-.estrela-cadente {
-
-    position:fixed;
-
-    width:120px;
-
-    height:2px;
-
-    background:
-    linear-gradient(
-        90deg,
-        transparent,
-        white
-    );
-
-    transform:rotate(-35deg);
-
-    animation:
-    cair 8s infinite;
-
-    opacity:.7;
-
-}
-
-
-
-@keyframes cair {
-
-    0% {
-
-        top:-10%;
-        left:80%;
-
-        opacity:0;
-
-    }
-
-
-    10% {
-
-        opacity:1;
-
-    }
-
-
-    30% {
-
-        top:40%;
-        left:50%;
-
-        opacity:0;
-
-    }
-
-
-    100% {
-
-        opacity:0;
-
-    }
-
-}
-
-
-
-/* Brilho ao redor da carta */
-
 .card {
 
-    box-shadow:
-
-    0 0 20px rgba(255,150,220,.25),
-    0 0 80px rgba(180,80,255,.18),
-    inset 0 0 30px rgba(255,255,255,.05);
+padding:30px 22px;
 
 }
 
 
 
-/* Efeito de universo na página */
+h1 {
 
-body {
+font-size:60px;
 
-    background:
+}
 
-    radial-gradient(
-        circle at 50% 0%,
-        #572070 0%,
-        #16051f 45%,
-        #050208 100%
-    );
+
+
+p {
+
+font-size:16px;
+
+line-height:1.8;
+
+}
+
+
+
+.assinatura h2 {
+
+font-size:35px;
+
+}
+
 
 }
